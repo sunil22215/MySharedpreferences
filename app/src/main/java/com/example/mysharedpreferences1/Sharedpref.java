@@ -18,7 +18,6 @@ public class Sharedpref {
         }
     }
 
-
     public static void write(String key, String value) {
         SharedPreferences.Editor prefsEditor = sharedPreferences.edit();
         prefsEditor.putString(key, value);
@@ -28,7 +27,9 @@ public class Sharedpref {
     public static String read(String key, String defValue) {
         return sharedPreferences.getString(key, defValue);
     }
-
+    public void remove(){
+         sharedPreferences.edit().clear().commit();
+    }
 
 }
 

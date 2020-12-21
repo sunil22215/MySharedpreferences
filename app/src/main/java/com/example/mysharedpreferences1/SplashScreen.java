@@ -14,6 +14,7 @@ public class SplashScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
+        Sharedpref.init(getApplicationContext());
         getSupportActionBar().hide();
         setTimer();
     }
@@ -23,15 +24,10 @@ public class SplashScreen extends AppCompatActivity {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
+
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 finish();
-
-              /*  if (new User(SplashActivity.this).getName()!="") {
-                    startActivity(new Intent(getApplicationContext(), WelcomeAcitvity.class));
-                    finish();
-                }else {
-
-                }*/
+                
 
 
             }
